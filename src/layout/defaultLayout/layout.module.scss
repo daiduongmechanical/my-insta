@@ -1,0 +1,32 @@
+.wrapper{
+    width: 100%;
+    min-height: 100vh;
+display: flex;
+}
+
+.sidebar{
+    width: 245px;
+    height: 100vh;
+   border-right: 0.2px solid #828282; 
+   position: fixed;
+   
+
+}
+
+.body{
+    width: 100%;
+    height: auto;
+    margin-left: 245px;
+    display: flex;
+    justify-content: space-between;
+& .main{
+    width: 100%;
+}
+
+    & .footer{
+  width: 345px;
+       height: auto;
+       background-color: aqua;
+    }
+}
+
