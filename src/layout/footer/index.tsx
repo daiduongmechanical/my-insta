@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import style from "./footer.module.scss";
+import React from "react";
 
 
 const Footer =()=>{
