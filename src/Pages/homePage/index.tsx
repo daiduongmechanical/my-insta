@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import  style from "./homePage.module.scss";
-import React from "react";
+
 
 const HomePage=()=>{
 
