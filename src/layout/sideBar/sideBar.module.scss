@@ -14,3 +14,33 @@ height: 92px;
 }
 }
 
+.item__cover{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 12px;
+    margin:2px 0;
+
+    &:hover{
+        background-color: var(--hover);
+        border-radius: 8px;
+    }
+
+
+
+
+    & .icon{
+        font-size: 24px;
+        max-width: 24px;
+
+    }
+
+    & span{
+        font-size: 16px;
+        padding-left: 16px;
+    }
+}
+
+
+
