@@ -2,6 +2,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    color: var(--black);
+    font-size: 16px;
     
 }
 
@@ -9,3 +11,12 @@ p{
     margin-top: 0;
 }
 
+:root {
+    --black: #180000;
+    --hover:#f2f2f2;
+  
+  }
+
+  a{
+    color: var(--black);
+  }
