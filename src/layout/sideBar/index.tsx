@@ -21,7 +21,8 @@ const listItem=[
         </div> 
         </div>
         <div>
-{listItem.map((e,index)=><NavItem key={index} to={e.link}>
+{listItem.map((e,index)=>
+<NavItem key={index} to={e.link}>
     <div className={cx("item__cover")}><FontAwesomeIcon className={cx("icon")} icon={e.icon}/><span>{e.text}</span></div>
     </NavItem>)}
 </div>

@@ -20,25 +20,23 @@ height: 92px;
     justify-content: flex-start;
     width: 100%;
     padding: 12px;
-    margin:2px 0;
+    margin:4px 0;
+    letter-spacing:1PX;
 
     &:hover{
         background-color: var(--hover);
         border-radius: 8px;
+      
     }
-
-
-
-
     & .icon{
-        font-size: 24px;
-        max-width: 24px;
+        font-size: 26px;
+        max-width: 26px;
 
     }
 
     & span{
-        font-size: 16px;
-        padding-left: 16px;
+        font-size: 14px;
+        padding-left: 14px;
     }
 }
 
