@@ -12,7 +12,15 @@ const Footer =()=>{
 
 
 return (<div className={cx("wrapper")}>
-    {arr.map((e,index)=>  <SuggestItem/>)}
+    <div className={cx("profile")}>
+    <SuggestItem big/>
+    </div>
+<div className={cx("suggest")}>
+<span>Suggested for you</span>
+<b>See all</b>
+</div>
+    
+    {arr.map(()=>  <SuggestItem/>)}
    
     <h1>this is footer</h1>
 </div>)
