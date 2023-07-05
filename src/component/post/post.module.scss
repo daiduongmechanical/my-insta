@@ -47,7 +47,9 @@
     height: 212px;
 
     & .select{
-        
+        &.iconz{
+            float: right;
+        }
     }
 }
 
