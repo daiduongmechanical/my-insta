@@ -16,9 +16,10 @@ const PostItem=()=>{
                 </div>
 
                 <div className={cx("video")}>
-                <video>
-                    <source src="./video/Download.mp4" type="video/mp4"/>
+                    <video>
+                        <source src="./video/Download.mp4" type="video/mp4"/>
                     </video>
+                    <p>loa</p>
                 </div>
                 <div className={cx("comment")}>
                     <div  className={cx("select")}>

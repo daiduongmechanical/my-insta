@@ -42,12 +42,27 @@
         height: 530px;
         width: 430px;
     }
+    & p{
+        position: relative;
+        float: right; 
+        top: 500px;
+    }
 }
 .comment{
     height: 212px;
 
     & .select{
-        &.iconz{
+        padding: 6px 10px;
+        & .iconw{
+            padding-right: 10px;
+        }
+        & .iconx{
+            padding-right: 10px;
+        }
+        & .icony{
+            padding-right: 10px;
+        }
+        & .iconz{
             float: right;
         }
     }
