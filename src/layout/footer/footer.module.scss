@@ -23,3 +23,33 @@
         font-size: 12px;
     }
 }
+
+.infomation{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+width: 100%;
+    height: auto;
+    overflow: hidden;
+
+ 
+    } 
+
+    .dot__cover{
+        display: flex;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3px;
+        & a{
+            color:  var(--gray);
+            font-size: 12px;
+        }
+    
+        & .dot{
+            font-size: 2px;
+            color: var(--gray);
+            margin: 4px 2px 0;
+        }
+    }
