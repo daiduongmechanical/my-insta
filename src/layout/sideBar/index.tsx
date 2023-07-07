@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import style from "./sideBar.module.scss";
 import NavItem from "../../component/navItem";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse,faUser} from "@fortawesome/free-solid-svg-icons";
+import { faBell, faBullhorn, faCompass, faHouse,faNoteSticky,faPlus,faUser} from "@fortawesome/free-solid-svg-icons";
 
 const SideBar=()=>{
 
@@ -10,8 +10,11 @@ const SideBar=()=>{
 
 const listItem=[
     {link:"/",text:"Home",icon:faHouse},
+    {link:"/discover",text:"Discover",icon:faCompass},
+    {link:"/Bell",text:"Bell",icon:faBell},
+    {link:"/Create",text:"Create",icon:faPlus},
     {link:"/profile",text:"Profile",icon:faUser}
-
+    
 ]
 
     return(<div className={cx("wrapper")}>
