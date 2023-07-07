@@ -32,8 +32,9 @@ return (<div className={cx("wrapper")}>
         {index!==info.length-1 &&<FontAwesomeIcon className={cx("dot")} icon={faCircle}/>}
         </div> )}
        
-        
+       
     </div>
+    <span className={cx("infomation--more")}>© 2023 Instagram from Meta</span>   
 </div>)
 
 }

@@ -29,9 +29,13 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
+    margin-bottom: 16px;
+    margin-top: 16px;
 width: 100%;
     height: auto;
     overflow: hidden;
+    
+   
 
  
     } 
@@ -52,4 +56,9 @@ width: 100%;
             color: var(--gray);
             margin: 4px 2px 0;
         }
+    }
+
+    .infomation--more{
+        font-size: 14px;
+        color: var(--gray);
     }

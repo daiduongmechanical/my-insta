@@ -1,16 +1,17 @@
 import classNames from "classnames/bind";
 import style from "./sideBar.module.scss";
 import NavItem from "../../component/navItem";
+import routes from "../../config";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faBullhorn, faCompass, faHouse,faNoteSticky,faPlus,faUser} from "@fortawesome/free-solid-svg-icons";
+import { faBell,  faCompass, faHouse,faPlus,faUser} from "@fortawesome/free-solid-svg-icons";
 
 const SideBar=()=>{
 
     const cx:any=classNames.bind(style)
 
 const listItem=[
-    {link:"/",text:"Home",icon:faHouse},
-    {link:"/discover",text:"Discover",icon:faCompass},
+    {link:routes.home,text:"Home",icon:faHouse},
+    {link:routes.Discover,text:"Discover",icon:faCompass},
     {link:"/Bell",text:"Bell",icon:faBell},
     {link:"/Create",text:"Create",icon:faPlus},
     {link:"/profile",text:"Profile",icon:faUser}
