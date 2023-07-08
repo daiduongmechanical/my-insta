@@ -1,14 +1,35 @@
 import classNames from "classnames/bind";
 import  Style  from "../post/post.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faEllipsis, faFolder, faHeart, faSave, faShare, faSmile, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faEllipsis, faFolder, faHeart, faShare, faSmile, } from "@fortawesome/free-solid-svg-icons";
+import {  useEffect, useRef} from "react";
 
-const PostItem=()=>{
+const  PostItem=({url}:any)=>{
 
     const cx=classNames.bind(Style)
+    const videoRef:any=useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+       const isInViewport = ():boolean => {
+      const rect = videoRef.current.getBoundingClientRect(); 
+      return rect?.top >= -405 && rect?.bottom <= 900
+    };
+
+        const handleScroll = () => {
+          isInViewport()?videoRef.current.play():videoRef.current.pause()
+      
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+  
 
     return(
-        <div className={cx("wrapper")}>
+        <div className={cx("wrapper__all")}>
+            <div className={cx("wrapper")} >
 
             <div className={cx("cart")}>
                 <div className={cx("info")}>
@@ -17,9 +38,10 @@ const PostItem=()=>{
                     <p className={cx("icon")}><FontAwesomeIcon icon={faEllipsis}/></p>
                 </div>
 
-                <div className={cx("video")}>
-                    <video controls>
-                        <source src="./video/Download.mp4" type="video/mp4"/>  
+              
+                    <div className={cx("video")}>
+                    <video  controls ref={videoRef}>
+                        <source src={url} type="video/mp4"/>  
                     </video>
                    
                 </div>
@@ -43,7 +65,7 @@ const PostItem=()=>{
                     </div>
                 </div>
            </div>
-
+           </div>
         </div> 
     )
 }
