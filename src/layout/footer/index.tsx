@@ -6,7 +6,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 
 
-const Footer =()=>{
+const Footer =({bottom}:any)=>{
     const arr:number[] = [1,2,3,4];
     const info:string[]=["About","Help","Press","API","Jobs","Privacy","Terms","Locations","Language","Meta verified"]
 
@@ -14,27 +14,27 @@ const Footer =()=>{
 
 
 
-return (<div className={cx("wrapper")}>
-    <div className={cx("profile")}>
+return (<div className={cx("wrapper",{bottom})}>
+    {!bottom &&<div className={cx("profile")}>
     <SuggestItem big/>
-    </div>
+    </div>}
 <div className={cx("suggest")}>
-<span>Suggested for you</span>
-<b>See all</b>
+{ !bottom &&<span>Suggested for you</span>}
+{!bottom&& <b>See all</b>}
 </div>
     
-    {arr.map(()=>  <SuggestItem/>)}
+    {!bottom&& arr.map(()=>  <SuggestItem/>)}
    
     <div className={cx("infomation")}>
      
         {info.map((e,index)=> <div className={cx("dot__cover")} key={e}>
             <a href="">{e}</a>
-        {index!==info.length-1 &&<FontAwesomeIcon className={cx("dot")} icon={faCircle}/>}
+        {index!==info.length-1 && !bottom&&<FontAwesomeIcon className={cx("dot")} icon={faCircle}/>}
         </div> )}
        
        
     </div>
-    <span className={cx("infomation--more")}>© 2023 Instagram from Meta</span>   
+    <p className={cx("infomation--more")}>© 2023 Instagram from Meta</p>   
 </div>)
 
 }

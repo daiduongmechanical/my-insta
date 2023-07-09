@@ -1,12 +1,11 @@
-
 import Footer from "../footer";
 import SideBar from "../sideBar";
 import classNames from "classnames/bind";
 
-import style from "./layout.module.scss";
+import style from "./noFooterLayout.module.scss"
 
 
-const defaultLayOut =({children}:any)=> {
+const NoFooterLayout =({children}:any)=> {
 const cx=classNames.bind(style);
 
 
@@ -18,13 +17,11 @@ const cx=classNames.bind(style);
 
     <div className={cx("body")}>
    <div className={cx("main")}>{children}</div>
-   <div className={cx("footer")}>
-    
-    <Footer/></div>
-   
+   <div className={cx("footer")}><Footer bottom/></div>
    </div> 
+ 
     </div>
     )
 }
 
-export default  defaultLayOut;
+export default  NoFooterLayout;
