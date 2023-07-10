@@ -19,9 +19,8 @@ let arr:string[]=["./video/vs1.mp4", "./video/vs2.mp4", "./video/vs3.mp4", "./vi
     return (
     <div className={cx("wrapper__all")}>
 
- {arr.map((e,index)=><PostItem key={index} url={e}/>
-
-
+ {arr.map((e,index)=><PostItem key={index} text={index} url={e}/>
+ 
  )}
     </div>)
 }

@@ -2,12 +2,16 @@ import classNames from "classnames/bind";
 import  Style  from "../post/post.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faEllipsis, faFolder, faHeart, faShare, faSmile, } from "@fortawesome/free-solid-svg-icons";
-import {  useEffect, useRef} from "react";
+import {  useEffect, useRef, useState} from "react";
+import BellPage from "../../Pages/bell/bell";
 
-const  PostItem=({url}:any)=>{
+const  PostItem=({url,text}:any)=>{
 
     const cx=classNames.bind(Style)
     const videoRef:any=useRef<HTMLVideoElement>(null);
+    const[show,setShow]=useState<boolean>(false)
+
+    const closeWindow=(data:boolean)=>setShow(data)
 
     useEffect(() => {
        const isInViewport = ():boolean => {
@@ -25,10 +29,21 @@ const  PostItem=({url}:any)=>{
           window.removeEventListener('scroll', handleScroll);
         };
       }, []);
+
+      useEffect(()=>{
+        
+        window.addEventListener('wheel', (e) => {
+            e.preventDefault();
+          }, { passive: !show});
+          
+      },[show])
   
+    
 
     return(
+       
         <div className={cx("wrapper__all")}>
+            {show && <BellPage text={text} close={closeWindow}/>}
             <div className={cx("wrapper")} >
 
             <div className={cx("cart")}>
@@ -55,7 +70,7 @@ const  PostItem=({url}:any)=>{
                     <p className={cx("likecmt")}>Luot thich</p>
                     <p className={cx("namecmt")}>name</p>
                     <p className={cx("capcmt")}>cap</p>
-                    <p className={cx("displaycmt")}>xem tat ca comment</p>
+                    <p onClick={()=>setShow(true)} className={cx("displaycmt")}>xem tat ca comment</p>
                     <p className={cx("daycmt")}>day</p>
 
                     <div className={cx("createcmt")}>

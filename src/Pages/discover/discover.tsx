@@ -4,7 +4,7 @@ const DiscoverPage=()=>{
 
     const cx:any=classNames.bind(style)
 
-    return (<div className={cx("wrapper")}>hello</div>)
+    return (<div className={cx("wrapper")}>Discover page</div>)
 }
 
 
