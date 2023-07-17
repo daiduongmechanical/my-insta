@@ -3,7 +3,9 @@ const routes = {
   profile: "/profile",
   upload: "/upload",
   Discover: "/discover",
-  Bell:"/bell"
+  Bell:"/bell",
+  Ellip:"/ellipsis",
+  shareVideo:"/shareVideo"
 };
 
 export default routes;

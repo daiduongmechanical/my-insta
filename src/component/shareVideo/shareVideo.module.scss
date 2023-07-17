@@ -1,0 +1,163 @@
+.wrapper_shareVideo{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height:100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+.share_video{
+    display: block;
+    width: 450px;
+    background: var(--white);
+    position: absolute;
+    border-radius: 10px;;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.title_share{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;    
+    height: 35px;
+    border-bottom: 1px solid var(--border);
+    & .space{
+        width: 10%;
+    }
+    & .text_share{
+        font-size: 14px;
+        color: #000000;
+        text-align: center;
+        width: 80%;
+        height: 100%;
+        margin: none;
+        padding-top: 10px;
+        transform: translateY(-5%);
+    }
+    & .icon_delete{
+        width: 10%;
+        text-align: center;
+    }
+}
+.share_to{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 58px;
+    width: 100%;
+    border-bottom: 1px solid  var(--border);
+    padding: 14px;
+    & .to{
+        color: #000000;
+        font-size: 14px;
+        width: 10%;
+        font-weight: 600;
+    }
+    & .input{
+        width: 90%;
+        padding: 6px 12px 4px 0px;
+        font-size: 12px;
+        color: var(--border);
+        border: none; 
+    }
+}
+.suggest_share{
+    display: block;
+    margin-top: 10px;
+    & .suggest_text{
+        color: #000000;
+        font-size: 12px;
+        font-weight: 500;
+        padding-left: 5px;
+        height: 11px;
+        margin: 8px;
+    }
+    & .suggest_friends{
+        overflow-y: scroll;
+        width: 100%;
+        height: 160px;
+        & .friend{
+            height: 44px;
+            width: 100%;
+            padding: 6px 16px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            & .img_friend{
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                margin-right: 12px;
+            }
+            & .name_friend{
+                height: 44px;
+                width: 80%;
+                margin-top: 5px;;
+                & .name1{
+                    font-size: 12px; 
+                    color: #000000;
+                    font-weight: 400;
+                }
+                & .name2{
+                    font-size: 12px; 
+                    color: var(--border);
+                }
+            }
+            & .circle{
+                fill: var(--white);
+                stroke:black;
+                stroke-width: 0.2875em;
+                cursor: pointer;
+            }
+        }
+    }
+    & .show_message{
+        width: 100%;
+        height: 42px; 
+        border-top: 1px solid var(--border);
+        transition: transform 0.5s;
+        transform: translateY(60%);
+        position: relative;
+        z-index: 1;
+        & .content_message{
+            width: 90%;
+            height: 32px;
+            margin: 10px 20px;
+            padding-bottom: 5px;
+            border: none;
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--black);
+            font-weight: 200;
+        }
+    }
+
+    & .send_message{
+        width: 420px;
+        margin: 0px 16px 12px 16px;
+        position: relative;
+        z-index: 2;
+        & button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;    
+            height: 26px;
+            background: #77A7FF;
+            color: var(--white);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        & button:hover{
+            background: #1877F2;
+        }
+    }
+}

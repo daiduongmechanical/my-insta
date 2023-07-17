@@ -18,10 +18,10 @@ return (<div className={cx("wrapper",{bottom})}>
     {!bottom &&<div className={cx("profile")}>
     <SuggestItem big/>
     </div>}
-<div className={cx("suggest")}>
-{ !bottom &&<span>Suggested for you</span>}
-{!bottom&& <b>See all</b>}
-</div>
+        <div className={cx("suggest")}>
+        { !bottom &&<span>Suggested for you</span>}
+        {!bottom&& <b>See all</b>}
+    </div>
     
     {!bottom&& arr.map(()=>  <SuggestItem/>)}
    

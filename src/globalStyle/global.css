@@ -4,6 +4,7 @@
     margin: 0;
 
     font-size: 16px;
+    scroll-behavior: smooth;
     
 }
 
@@ -15,7 +16,9 @@ p{
     --black: #180000;
     --hover:#f2f2f2;
     --gray:#979797;
-  
+    --white: #fff;
+    --red: red;
+    --border: rgb(118, 118, 118);
   }
 
   

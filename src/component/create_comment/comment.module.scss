@@ -1,0 +1,55 @@
+.comment{
+    height: 212px;
+    border-top: 1px solid rgb(200, 200, 200);
+    & .select{
+        padding: 6px 10px;
+        & .iconw{
+            padding-right: 20px;
+            color: black;
+        }
+        & .iconx{
+            padding-right: 20px;
+        }
+        & .icony{
+            padding-right: 20px;
+        }
+        & .iconz{
+            padding-right: 10px;;
+            float: right;
+        }
+    }
+    & p
+    {
+        font-size: 12px;
+        margin: 5px 10px;
+    }
+}
+
+.createcmt{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--gray);
+    & .iconcmt{
+        cursor: pointer;
+        padding: 15px;
+    }
+    & input{
+        border: none;
+        width: 80%;
+        background: transparent ;
+    }
+    & p:hover{
+        color: blue;
+        cursor: pointer;
+
+    }
+}
+
+.like_day{
+    & .like{
+        margin: -3px 0px -7px 10px;
+        font-weight: 600;
+    }
+}
