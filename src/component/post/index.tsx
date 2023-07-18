@@ -9,6 +9,8 @@ const  PostItem=({url}:any)=>{
     const cx=classNames.bind(Style)
     const videoRef:any=useRef<HTMLVideoElement>(null);
 
+    const testRef=useRef(null)
+
     useEffect(() => {
        const isInViewport = ():boolean => {
       const rect = videoRef.current.getBoundingClientRect(); 
@@ -16,7 +18,7 @@ const  PostItem=({url}:any)=>{
     };
 
         const handleScroll = () => {
-          isInViewport()?videoRef.current.play():videoRef.current.pause()
+          isInViewport() ? videoRef.current.play() : videoRef.current.pause()
       
         };
     
@@ -24,11 +26,14 @@ const  PostItem=({url}:any)=>{
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
+       
       }, []);
   
 
+    
+
     return(
-        <div className={cx("wrapper__all")}>
+        <div ref={testRef} className={cx("wrapper__all")}>
             <div className={cx("wrapper")} >
 
             <div className={cx("cart")}>
