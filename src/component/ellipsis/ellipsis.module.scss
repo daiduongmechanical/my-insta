@@ -1,0 +1,39 @@
+.overlay_elp{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height:100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  .content_elp{
+    transform: translateY(20%);
+    width: 400px;
+    overflow: hidden;
+    height: auto;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 8px;
+  }
+  .span_elp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 43px;
+    font-size: 14px;
+    cursor: pointer;
+    border-top: 1.5px solid #DADDE1;
+  }
+  .report{
+    color:var(--red);
+    border-top: none;
+  }
+  .unfollow{
+    color: var(--red);
+  }

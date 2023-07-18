@@ -3,7 +3,7 @@ import style from "./sideBar.module.scss";
 import NavItem from "../../component/navItem";
 import routes from "../../config";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell,  faCompass, faHouse,faPlus,faUser} from "@fortawesome/free-solid-svg-icons";
+import { faBell,  faCompass, faHouse,faPlus,faStar,faUser} from "@fortawesome/free-solid-svg-icons";
 
 const SideBar=()=>{
 
@@ -12,10 +12,10 @@ const SideBar=()=>{
 const listItem=[
     {link:routes.home,text:"Home",icon:faHouse},
     {link:routes.Discover,text:"Discover",icon:faCompass},
-    {link:"/Bell",text:"Bell",icon:faBell},
+    {link:"/ellipsis",text:"Ellip",icon:faBell},
     {link:"/Create",text:"Create",icon:faPlus},
-    {link:"/profile",text:"Profile",icon:faUser}
-    
+    {link:"/profile",text:"Profile",icon:faUser},
+    {link:"/shareVideo",text:"shareVideo",icon:faStar}
 ]
 
     return(<div className={cx("wrapper")}>
