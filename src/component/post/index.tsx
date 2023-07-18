@@ -1,18 +1,18 @@
 import classNames from "classnames/bind";
 import  Style  from "../post/post.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faEllipsis, faFolder, faHeart, faShare, faSmile, } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";import {  faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import {  useEffect, useRef, useState} from "react";
-import BellPage from "../../Pages/bell/bell";
+
 import CreateComment from "../create_comment";
 import EllipsisPage from "../ellipsis";
 import LoveIttemPage from "../loveItem";
 
-const  PostItem=({url,text}:any)=>{
+const  PostItem=({url}:any)=>{
 
     const cx=classNames.bind(Style)
     const videoRef:any=useRef<HTMLVideoElement>(null);
-
+const [loveItem,setLoveItem]=useState(false)
+const [ellip,setEllip]=useState(false)
     useEffect(() => {
        const isInViewport = ():boolean => {
       const rect = videoRef.current.getBoundingClientRect(); 
@@ -31,6 +31,9 @@ const  PostItem=({url,text}:any)=>{
        
       }, []);
   
+
+const handleClose=(data:boolean)=>setEllip(data)
+const loveItemClose=(data:boolean)=>setLoveItem(data)
 
     return(
         <div className={cx("wrapper__all")}>
