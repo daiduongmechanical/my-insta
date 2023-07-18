@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
 import  Style  from "../create_comment/comment.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faEllipsis, faFolder, faHeart, faShare, faSmile, } from "@fortawesome/free-solid-svg-icons";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { faComment, faFolder, faHeart, faShare, faSmile, } from "@fortawesome/free-solid-svg-icons";
+import { Fragment, useEffect, useState } from "react";
 import BellPage from "../../Pages/bell/bell";
 
 const  CreateComment=({url,text,view}:any)=>{
