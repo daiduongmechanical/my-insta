@@ -10,6 +10,22 @@
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
 }
+
+.select__share{
+    background-color: pink ;
+    height: 100%; padding: 0 10px;
+    border-radius:15px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .select__share--icon{
+        margin-left: 3px;
+        cursor: pointer;
+    }
+    
+}
 .share_video{
     display: block;
     width: 450px;
@@ -53,6 +69,7 @@
     width: 100%;
     border-bottom: 1px solid  var(--border);
     padding: 14px;
+    color: black;
     & .to{
         color: #000000;
         font-size: 14px;
@@ -80,6 +97,7 @@
     }
     & .suggest_friends{
         overflow-y: scroll;
+        color: black;
         width: 100%;
         height: 160px;
         & .friend{

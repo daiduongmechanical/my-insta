@@ -1,25 +1,28 @@
 import classNames from "classnames/bind";
 import  style from "./shareVideo.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDeleteLeft, faO } from "@fortawesome/free-solid-svg-icons";
-import { useRef, useState } from "react";
+import { faDeleteLeft ,faXmark} from "@fortawesome/free-solid-svg-icons";
+import SuggestItem from "../suggestItem";
+import { useState } from "react";
 
-const shareVideoPage=({closeModel=true}:any)=>{
-
+const ShareVideoPage=({closeModel=true}:any)=>{
+    const list:string[]=['name1', 'name2', 'name3']
+    type ShareDataType = string[];
     const cx:any=classNames.bind(style)
     //bat event click ra ngoai content
     const  clickOut = (e:any)=>{if(e.target === e.currentTarget){closeModel(false)}};
+    const [share,setShare]=useState<ShareDataType>([]);
 
-    //show message and send to friend
-    const nameRef = useRef(null);
-    const [showMessage, setShowMessage] = useState(false);
-    const setTransform = () => {
-        setShowMessage(prevShowMessage => !prevShowMessage);  
-             
-    };
+const handleAdd=(data:string)=>{
+    let arr:string[]=[...share];
+    if (arr.includes(data)){
+        arr.splice(arr.indexOf(data),1)
+      setShare(arr)
+    }else{ setShare(pre=>[...pre,data])}
+   
+}
 
-
-
+  
     return (
         <div className={cx("wrapper_shareVideo")}> 
             <div onClick={clickOut} className={cx("share_video")}> 
@@ -29,20 +32,18 @@ const shareVideoPage=({closeModel=true}:any)=>{
                     <p className={cx("icon_delete")}><FontAwesomeIcon icon={faDeleteLeft}/></p>
                 </div>
                 <div className={cx("share_to")}>
-                    <p className={cx("to")}>Tới: </p> <input type="text" className={cx("input")} placeholder="Tìm kiếm..."/>
+                    <p className={cx("to")}>Tới: </p>
+                    {share.map(e=><div key={e} className={cx("select__share")}>{e}
+                     <FontAwesomeIcon onClick={()=>handleAdd(e)}  className={cx("select__share--icon")} icon={faXmark}/>
+                     </div>)} 
+                     <input type="text" className={cx("input")} placeholder="Tìm kiếm..."/>
                 </div>
                 <div className={cx("suggest_share")}>
                     <p className={cx("suggest_text")}>Gợi ý</p>
                     <div className={cx("suggest_friends")}>
-                        <div className={cx("friend")}>
-                           <img className={cx("img_friend")} src="https://scontent.fsgn15-1.fna.fbcdn.net/v/t39.30808-1/357062908_1140164660706185_2470281605044684794_n.jpg?stp=dst-jpg_p240x240&_nc_cat=106&ccb=1-7&_nc_sid=7206a8&_nc_ohc=H1VS8DmopWoAX-tJ9Rl&_nc_ht=scontent.fsgn15-1.fna&oh=00_AfDmntYqZMBfpe4aHFDubRTXhPNot4o5wOvYDGv4PGg8nA&oe=64B8F022" alt="" />
-                            <p className={cx("name_friend")}> <p className={cx("name1")} ref={nameRef}>Danh Hai</p> <p className={cx("name2")}>hai6813</p> </p>
-                           <svg viewBox="0 0 80 80" width="18" height="18" onClick={setTransform}>
-                                <circle className={cx("circle")} cx="40" cy="40" r="38"/>
-                           </svg>
-                        </div>
+                        {list.map(e=> <SuggestItem listSelect={share} share addValue={handleAdd} key={e} name={e}/>)}
                     </div>
-                    <div className={cx("show_message")} style={{ transform: showMessage ? "translateY(0%)" : "translateY(60%)" }}>
+                    <div className={cx("show_message")} >
                         <input type="text" className={cx("content_message")} placeholder="Soạn tin nhắn..."/>
                     </div>
                     <div  className={cx("send_message")}>
@@ -55,4 +56,4 @@ const shareVideoPage=({closeModel=true}:any)=>{
 }
 
 
-export default shareVideoPage;
+export default ShareVideoPage;

@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faFolder, faHeart, faShare, faSmile, } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useEffect, useState } from "react";
 import BellPage from "../../Pages/bell/bell";
+import ShareVideoPage from "../shareVideo";
 
 const  CreateComment=({url,text,view}:any)=>{
 
     const cx=classNames.bind(Style)
     const[show,setShow]=useState<boolean>(false)
+    const [showShare,setShowShare]=useState<boolean>(false)
 
     const closeWindow=(data:boolean)=>setShow(data)
 
@@ -22,16 +24,28 @@ const  CreateComment=({url,text,view}:any)=>{
             e.preventDefault();
             },{ passive: true},)
         },[show])
+
    
+   useEffect(()=>{
+     
+      window.addEventListener('keydown', (e)=>{
+        if(e.code==="Escape"){
+            setShowShare(false)
+        }
+      })
+
+     window.removeEventListener('keydown', ()=>{})
+   },[])
 
         return(
             <div className={cx("wrapper__all")}>    
+{showShare && <ShareVideoPage/>}
             {show && <BellPage text={text} URL={url} close={closeWindow}/>}
                 <div className={cx("comment")}>
                     <div  className={cx("select")}>
                         <span className={cx("iconw")}><FontAwesomeIcon icon={faHeart}/></span>
                         <span className={cx("iconx")} onClick={()=>setShow(true)}><FontAwesomeIcon icon={faComment}/></span>
-                        <span className={cx("icony")}><FontAwesomeIcon icon={faShare}/></span>
+                        <span className={cx("icony")}><FontAwesomeIcon onClick={()=>setShowShare(true)} icon={faShare}/></span>
                         <span className={cx("iconz")}><FontAwesomeIcon icon={faFolder}/></span>
                     </div>
                     {!view && 
