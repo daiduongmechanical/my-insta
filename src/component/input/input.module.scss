@@ -1,0 +1,22 @@
+.itemInput{
+    position: relative;
+    width: 270px;
+    height: 43.6px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+.show_hide{
+    position: absolute;
+    z-index: 4;
+    right: 0px;
+    font-weight: 600;
+    font-size: 14px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.show_hide:hover{
+    color: gray;
+}

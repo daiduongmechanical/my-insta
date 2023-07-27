@@ -46,6 +46,8 @@ return( <div className={cx("wrapper",{big})}>
             {comment && <b>12 phut</b>}
             {comment && <p>tra loi</p>}
         </div>
+
+        <input type=""  placeholder=""/>
     </div>
 
     <div className={cx("heart")}>

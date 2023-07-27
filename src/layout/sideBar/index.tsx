@@ -15,7 +15,7 @@ const listItem=[
     {link:"/ellipsis",text:"Ellip",icon:faBell},
     {link:"/Create",text:"Create",icon:faPlus},
     {link:"/profile",text:"Profile",icon:faUser},
-    {link:"/shareVideo",text:"shareVideo",icon:faStar}
+    {link:"/login",text:"login",icon:faStar}
 ]
 
     return(<div className={cx("wrapper")}>
