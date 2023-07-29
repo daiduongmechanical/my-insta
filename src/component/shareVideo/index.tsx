@@ -42,6 +42,7 @@ const handleAdd=(data:string)=>{
                     <p className={cx("suggest_text")}>Gợi ý</p>
                     <div className={cx("suggest_friends")}>
                         {list.map(e=> <SuggestItem listSelect={share} share addValue={handleAdd} key={e} name={e}/>)}
+                        
                     </div>
                     <div className={cx("show_message")} >
                         <input type="text" className={cx("content_message")} placeholder="Soạn tin nhắn..."/>
