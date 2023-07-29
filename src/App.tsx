@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import  { Fragment } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {PrivateRoutes,PublicRoutes} from"./route";
 import defaultLayOut from './layout/defaultLayout';
+import IsLoginProvider from './Context/LoginProvider';
 
 import './App.css'
 function App() {
@@ -24,11 +25,14 @@ function App() {
                 return (
                     <Route
                         key={index}
-                        path={route.path}
-                        element={              
-                                                <Layout>
+                        path={route.path}   
+                        element={    <Layout>       
+                             <IsLoginProvider>
+                                             
                                                     <Page />
-                                                </Layout>                     
+                                                
+                                                </IsLoginProvider>   
+                                                </Layout>                 
                         }
                     />
                 );

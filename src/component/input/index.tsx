@@ -5,9 +5,10 @@ import React, { useState } from "react";
 interface InputItemProps{
     type?:string;
     suggestText?:string;
+    name:string;
 }
 
-const MyInput:React.FC<InputItemProps>=({type,suggestText})=>{
+const MyInput:React.FC<InputItemProps>=({type,suggestText,name})=>{
 
     const [value, setValue] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -46,7 +47,7 @@ const MyInput:React.FC<InputItemProps>=({type,suggestText})=>{
     return (
         <div className={cx("itemInput")}>
             <p style={pStyle}>{suggestText}</p>
-            <input style={inputStyle} type={showPassword ? "text" : type} value={value} onChange={handleChange}/>
+            <input name={name} style={inputStyle} type={showPassword ? "text" : type} value={value} onChange={handleChange}/>
             {type === "password" && value !== "" && (
                 <div className={cx("show_hide")}>
                 {showPassword ? (
