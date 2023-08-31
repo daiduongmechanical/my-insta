@@ -5,18 +5,17 @@ import FooterLogin from "../../component/footer_login";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useUserDataContext from "../../hook/useUserDataContext";
-import { IUserData } from "../../Context/UserDataProvider";
 
 const LoginPage = () => {
   const cx: any = classNames.bind(style);
-  const { userData, setUserData } = useUserDataContext();
+  const { setUserData } = useUserDataContext();
   const history = useNavigate();
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     axios
-      .post("https://localhost:7100/api/User/Login", data)
+      .post("https://localhost:7100/api/Login", data)
       .then((response) => {
         if (response.status === 200) {
           setUserData(response.data.user);

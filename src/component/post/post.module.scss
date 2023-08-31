@@ -3,17 +3,19 @@
     margin-top: 10px;
 }
 .wrapper {
-    // background-color: var(--black);
+
     width: 100%;
-    height: 800px;
+
+
 }
 .cart{
     width: 470px;
-    height: 800px; 
-    border: 1px solid white;
+    max-height: 800px;
+    height: auto;
+    border: 1px solid var(--black);
     border-radius: 7px;
     margin: 0 auto; 
-    color: var(--white)
+    color: var(--black)
 }
 
 .info{
@@ -48,16 +50,36 @@
     }
 }
 
-.video{
 
+
+.video{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     & video{
         height: 530px;
-        width: 450px;
+        width: 100%;
+      
+    }
+
+    & .image__post{
+        width: 90%;
+        height: 530px;
+        
     }
 }
-.ellipsisPage{
-    color: var(--black);
-}
-.loveItemPage{
-    color: var(--black);
+.action_wrapper{
+    width: 100%;
+    height: 30%;
+
+
+   & .ellipsisPage{
+        color: var(--black);
+    }
+   & .loveItemPage{
+        color: var(--black);
+    }
+
 }
